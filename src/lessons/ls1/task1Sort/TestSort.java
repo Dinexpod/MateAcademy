@@ -5,12 +5,10 @@ public class TestSort {
 
        int[] test = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
 
-        test = BubbleSort.sort(test);
+        int[] copyTest = BubbleSort.sort(test);
 
-        for (int i : test) {
+        for (int i : copyTest) {
             System.out.print(i + " ");
         }
-
-
     }
 }
