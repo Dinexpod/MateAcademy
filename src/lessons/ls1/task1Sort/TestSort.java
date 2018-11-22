@@ -14,12 +14,12 @@ public class TestSort {
         int[] copyTestMas1 = InsertSort.sort(testMas1);     //сортування вставками
         int[] copyTestMas2 = InsertSort.sort(testMas2);     //сортування бульбашкою
 
-        System.out.println("\nСортуваний масив заповнений рандомними числами:");
+        System.out.println("\nСортуваний(бульбашкою) масив заповнений рандомними числами:");
         for (int i : copyTestMas2) {
             System.out.print(i + "\t");
         }
 
-        System.out.println("\n\nСортуваний масив заповнений вручну:");
+        System.out.println("\n\nСортуваний(вставками) масив заповнений вручну:");
         for (int i : copyTestMas1) {
             System.out.print(i + "\t");
         }
