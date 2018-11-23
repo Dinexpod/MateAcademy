@@ -11,16 +11,16 @@ public class Matrix {
         int[][] reversedMatrix = MatrixRevers.reverse(actualMatrix);
 
         System.out.println("\nActual matrix:\n");
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 5; j++) {
+        for (int i = 0; i < actualMatrix.length; i++) {
+            for (int j = 0; j < actualMatrix.length; j++) {
                 System.out.print(actualMatrix[i][j] + "\t");
             }
             System.out.println();
         }
 
         System.out.println("\nReversed matrix:\n");
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 5; j++) {
+        for (int i = 0; i < reversedMatrix.length; i++) {
+            for (int j = 0; j < reversedMatrix.length; j++) {
                 System.out.print(reversedMatrix[i][j] + "\t");
             }
             System.out.println();
