@@ -19,13 +19,16 @@ public class AdvancedLoremIpsum {
             e.printStackTrace();
         }
 
+        //textFromInput = textFromInput.replaceAll("stop" ,"");
+        textFromInput = textFromInput.replaceAll("\\b\\w{3,3}\\b", "");
+        System.out.println(textFromInput);
 
-        try(FileWriter writer = new FileWriter(
-                "src/homeworks/hw1/sevenAdvancedLoremIpsum/filtered_lorem_ipsum.txt")) {
-             writer.write(textFromInput);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try(FileWriter writer = new FileWriter(
+//                "src/homeworks/hw1/sevenAdvancedLoremIpsum/filtered_lorem_ipsum.txt")) {
+//             writer.write(textFromInput);
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 }
