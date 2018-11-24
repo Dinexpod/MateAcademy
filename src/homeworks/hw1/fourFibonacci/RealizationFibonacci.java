@@ -4,7 +4,7 @@ public class RealizationFibonacci {
     /*
      * The method that make realization "Fibonacci number"
      */
-    public static double realizationFibonacciNumber(int fibonacciSize) {
+    public static int realizationFibonacciNumber(int fibonacciSize) {
         if (fibonacciSize <= 1) {
             return fibonacciSize;
         } else {
