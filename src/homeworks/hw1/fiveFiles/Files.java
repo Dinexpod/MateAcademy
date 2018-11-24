@@ -15,7 +15,7 @@ public class Files {
 
         int[][] reversMatrix = MatrixRevers.reverse(actualMatrix);
 
-
+        // writing the matrix to file
         try(FileWriter writer = new FileWriter("src/homeworks/hw1/fiveFiles/reflected_matrix.txt", false)) {
             for (int i = 0; i < reversMatrix.length; i++) {
                 for (int j = 0; j < reversMatrix[i].length; j++) {
