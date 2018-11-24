@@ -4,12 +4,12 @@ public class RealizationFibonacci {
     /*
      * The method that make realization "Fibonacci number"
      */
-    public static int realizationFibonacciNumber(int fibonacciSize) {
+    public static int countFibonacciNumber(int fibonacciSize) {
         if (fibonacciSize <= 1) {
             return fibonacciSize;
         } else {
-            return (realizationFibonacciNumber(fibonacciSize - 1)
-                    + realizationFibonacciNumber(fibonacciSize-2));
+            return (countFibonacciNumber(fibonacciSize - 1)
+                    + countFibonacciNumber(fibonacciSize-2));
         }
     }
 }

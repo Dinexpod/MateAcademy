@@ -11,7 +11,7 @@ public class Fibonacci {
         System.out.println("Input fibonacci size:");
         int fibonacciSize = Integer.parseInt(reader.readLine());
 
-        System.out.println(RealizationFibonacci.realizationFibonacciNumber(fibonacciSize));
+        System.out.println(RealizationFibonacci.countFibonacciNumber(fibonacciSize));
 
         reader.close();
     }
