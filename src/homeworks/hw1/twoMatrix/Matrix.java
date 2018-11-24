@@ -12,7 +12,7 @@ public class Matrix {
 
         System.out.println("\nActual matrix:\n");
         for (int i = 0; i < actualMatrix.length; i++) {
-            for (int j = 0; j < actualMatrix.length; j++) {
+            for (int j = 0; j < actualMatrix[i].length; j++) {
                 System.out.print(actualMatrix[i][j] + "\t");
             }
             System.out.println();
@@ -20,7 +20,7 @@ public class Matrix {
 
         System.out.println("\nReversed matrix:\n");
         for (int i = 0; i < reversedMatrix.length; i++) {
-            for (int j = 0; j < reversedMatrix.length; j++) {
+            for (int j = 0; j < reversedMatrix[i].length; j++) {
                 System.out.print(reversedMatrix[i][j] + "\t");
             }
             System.out.println();
