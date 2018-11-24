@@ -23,6 +23,8 @@ public class Files {
                 }
                 writer.write("\n");
             }
+
+            writer.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }
