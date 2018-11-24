@@ -1,21 +1,21 @@
 package homeworks.hw1.threeRomb;
 
 public class RombRealization {
+   /*
+    * Method that make realization a romb by "*"
+    */
     public static void rombRealization(int sizeDiagonal) {
-        String[][] tmp = new String[sizeDiagonal][sizeDiagonal];
-
         for (int i = 0; i < sizeDiagonal; i++) {
             for (int j = 0; j < sizeDiagonal; j++) {
-                if(j > sizeDiagonal/2) {
-                    tmp[i][j] = " ";
+                if((j < ((sizeDiagonal / 2)) - i) || (j > ((sizeDiagonal / 2) + i))) {
+                    System.out.print(" ");
+                } else if ((i > (sizeDiagonal / 2))
+                           && ((j < ((sizeDiagonal / 2) + 1) - (sizeDiagonal - i))
+                               || (j > (((sizeDiagonal / 2) - 1) + (sizeDiagonal - i))))) {
+                    System.out.print(" ");
                 } else {
-                    tmp[i][j] = "*";
+                    System.out.print("*");
                 }
-            }
-        }
-        for (int i = 0; i < tmp.length; i++) {
-            for (int j = 0; j < tmp.length; j++) {
-                System.out.print(tmp[i][j]);
             }
             System.out.println();
         }
