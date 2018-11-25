@@ -1,7 +1,7 @@
 package homeworks.hw1.sixAdvancedQuickSort;
 
 public class QuickSortRealization {
-    public static int[] quickSort(int[] tmpArray, int first, int last) {
+    public static int[] doQuickSort(int[] tmpArray, int first, int last) {
 
         if(first >= last) {
             return tmpArray;
@@ -33,8 +33,8 @@ public class QuickSortRealization {
             }
         }
 
-        quickSort(tmpArray, first, opora);
-        quickSort(tmpArray, (opora + 1), last);
+        doQuickSort(tmpArray, first, opora);
+        doQuickSort(tmpArray, (opora + 1), last);
 
         return tmpArray;
     }
