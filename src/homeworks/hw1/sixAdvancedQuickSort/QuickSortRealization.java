@@ -8,15 +8,14 @@ public class QuickSortRealization {
         }
 
         int i = first, j = last;
-
-        int opora = ((i + j) / 2);
+        int pivot = ((i + j) / 2);
 
         while (i < j) {
-            while ((i < opora) && (tmpArray[i] <= tmpArray[opora])) {
+            while ((i < pivot) && (tmpArray[i] <= tmpArray[pivot])) {
                 i++;
             }
 
-            while ((j > opora) && (tmpArray[j] >= tmpArray[opora])) {
+            while ((j > pivot) && (tmpArray[j] >= tmpArray[pivot])) {
                 j--;
             }
 
@@ -25,16 +24,16 @@ public class QuickSortRealization {
                 tmpArray[i] = tmpArray[j];
                 tmpArray[j] = tmp;
 
-                if(i == opora) {
-                    opora = j;
-                } else if(j == opora) {
-                    opora = i;
+                if(i == pivot) {
+                    pivot = j;
+                } else if(j == pivot) {
+                    pivot = i;
                 }
             }
         }
 
-        doQuickSort(tmpArray, first, opora);
-        doQuickSort(tmpArray, (opora + 1), last);
+        doQuickSort(tmpArray, first, pivot);
+        doQuickSort(tmpArray, (pivot + 1), last);
 
         return tmpArray;
     }
