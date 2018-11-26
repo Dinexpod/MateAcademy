@@ -7,28 +7,28 @@ public class QuickSortRealization {
             return tmpArray;
         }
 
-        int start = first, end = last;
+        int i = first, j = last;
 
-        int opora = ((start + end) / 2);
+        int opora = ((i + j) / 2);
 
-        while (start < end) {
-            while ((start < opora) && (tmpArray[start] <= tmpArray[opora])) {
-                start++;
+        while (i < j) {
+            while ((i < opora) && (tmpArray[i] <= tmpArray[opora])) {
+                i++;
             }
 
-            while ((end > opora) && (tmpArray[end] >= tmpArray[opora])) {
-                end--;
+            while ((j > opora) && (tmpArray[j] >= tmpArray[opora])) {
+                j--;
             }
 
-            if(start < end) {
-                int tmp = tmpArray[start];
-                tmpArray[start] = tmpArray[end];
-                tmpArray[end] = tmp;
+            if(i < j) {
+                int tmp = tmpArray[i];
+                tmpArray[i] = tmpArray[j];
+                tmpArray[j] = tmp;
 
-                if(start == opora) {
-                    opora = end;
-                } else if(end == opora) {
-                    opora = start;
+                if(i == opora) {
+                    opora = j;
+                } else if(j == opora) {
+                    opora = i;
                 }
             }
         }
