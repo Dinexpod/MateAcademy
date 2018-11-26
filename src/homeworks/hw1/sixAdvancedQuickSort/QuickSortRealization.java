@@ -3,7 +3,7 @@ package homeworks.hw1.sixAdvancedQuickSort;
 public class QuickSortRealization {
     public static int[] doQuickSort(int[] tmpArray, int first, int last) {
 
-        if(first >= last) {
+        if (first >= last) {
             return tmpArray;
         }
 
@@ -19,14 +19,14 @@ public class QuickSortRealization {
                 j--;
             }
 
-            if(i < j) {
+            if (i < j) {
                 int tmp = tmpArray[i];
                 tmpArray[i] = tmpArray[j];
                 tmpArray[j] = tmp;
 
-                if(i == pivot) {
+                if (i == pivot) {
                     pivot = j;
-                } else if(j == pivot) {
+                } else if (j == pivot) {
                     pivot = i;
                 }
             }

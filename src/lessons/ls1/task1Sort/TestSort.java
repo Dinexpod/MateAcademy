@@ -6,20 +6,20 @@ public class TestSort {
         int[] testMas1 = {10, 9, 10, 7, 6, 5, 4, 3, 2, 1};
         int[] testMas2 = new int[10];
 
-        // Заповнення масиву рандомно від -50 до 50
+        // Filling array random numbers from -50 до 50
         for (int i = 0; i < testMas2.length; i++) {
             testMas2[i] = (int) ((Math.random() * 101) - 50);
         }
 
-        int[] copyTestMas1 = InsertSort.sort(testMas1);     //сортування вставками
-        int[] copyTestMas2 = InsertSort.sort(testMas2);     //сортування бульбашкою
+        int[] copyTestMas1 = InsertSort.sort(testMas1);     //insert sort
+        int[] copyTestMas2 = InsertSort.sort(testMas2);     //bubble sort
 
-        System.out.println("\nСортуваний(бульбашкою) масив заповнений рандомними числами:");
+        System.out.println("\nBubble sort(randome numbers):");
         for (int i : copyTestMas2) {
             System.out.print(i + "\t");
         }
 
-        System.out.println("\n\nСортуваний(вставками) масив заповнений вручну:");
+        System.out.println("\n\nInsert sort(randome numbers):");
         for (int i : copyTestMas1) {
             System.out.print(i + "\t");
         }
