@@ -8,9 +8,9 @@ public class AdvancedLoremIpsum {
         String tmpText = "";
 
         //read text from file
-        try(BufferedReader reader = new BufferedReader(
-                            new InputStreamReader(
-                                    new FileInputStream("src/homeworks/hw1/sevenAdvancedLoremIpsum/input.txt")))) {
+        try (BufferedReader reader = new BufferedReader(
+                new InputStreamReader(
+                        new FileInputStream("src/homeworks/hw1/sevenAdvancedLoremIpsum/input.txt")))) {
             while (reader.ready()) {
                 tmpText += reader.readLine();
             }
@@ -30,9 +30,9 @@ public class AdvancedLoremIpsum {
         tmpText = tmpText.replaceAll("[\\W]{1,10}", " ");
 
         //write text to file
-        try(FileWriter writer = new FileWriter(
+        try (FileWriter writer = new FileWriter(
                 "src/homeworks/hw1/sevenAdvancedLoremIpsum/filtered_lorem_ipsum.txt")) {
-             writer.write(tmpText);
+            writer.write(tmpText);
 
         } catch (IOException e) {
             e.printStackTrace();
