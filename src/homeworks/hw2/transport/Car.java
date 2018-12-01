@@ -10,11 +10,11 @@ public class Car {
     private double speedMax;
     private double overclocingTime;
     private int passengerCapacity;
-    private int currentPassCapacity;
+    private int currentNumberPassengers = 0;
     private int currentSpeed;
 
-    List<CarWheel> carWheels = new ArrayList<CarWheel>();
-    List<CarDoor> carDoors = new ArrayList<CarDoor>();
+    List<CarWheel> carWheels = new ArrayList<>();
+    List<CarDoor> carDoors = new ArrayList<>();
 
     Date date = new Date();
 
@@ -27,14 +27,77 @@ public class Car {
                double speedMax,
                double overclocingTime,
                int passengerCapacity,
-               int currentPassCapacity,
+               int currentNumberPassengers,
                int currentSpeed) {
         this.dateOfProduction = dateOfProduction;
         this.engineType = engineType;
         this.speedMax = speedMax;
         this.overclocingTime = overclocingTime;
         this.passengerCapacity = passengerCapacity;
-        this.currentPassCapacity = currentPassCapacity;
+        this.currentNumberPassengers = currentNumberPassengers;
         this.currentSpeed = currentSpeed;
+    }
+
+    public void changeCurrentSpeed(int currentSpeed) {
+        if ((currentSpeed > 0) && (currentSpeed < currentMaxSpeed())) {
+            this.currentSpeed = currentSpeed;
+        } else {
+            System.out.println("You can't set this speed if you love your Car!!! ");
+        }
+    }
+
+    public void putOnePassenger() {
+        if ((currentNumberPassengers < 0) || (currentNumberPassengers > passengerCapacity)) {
+            System.out.println("There are no places for new passengers!!!");
+        } else if (currentNumberPassengers < passengerCapacity) {
+            currentNumberPassengers++;
+            System.out.println("One passenger set in the car!");
+        }
+    }
+
+    public void landOnePassenger() {
+        if ((currentNumberPassengers < 0) || (currentNumberPassengers > passengerCapacity)) {
+            System.out.println("There are no passengers to land!!!");
+        } else if (currentNumberPassengers > 0) {
+            currentNumberPassengers--;
+            System.out.println("One passenger landed!");
+        }
+    }
+
+    public void landAllPassengers() {
+        for (int i = 0; i < currentNumberPassengers; i++) {
+            this.currentNumberPassengers--;
+            System.out.println("One passenger landed!");
+        }
+        System.out.println("All passengers landed!");
+    }
+
+    public double currentMaxSpeed() {
+        if (currentNumberPassengers < 0) {
+            return 0;
+        } else {
+            double eraseDegree = 0;
+            double currentMaxSpeed = speedMax * eraseDegree;
+
+            for (CarWheel wheel : carWheels) {
+                if (wheel.getTireState() > eraseDegree) {
+                    eraseDegree = wheel.getTireState();
+                }
+            }
+            return currentMaxSpeed;
+        }
+    }
+
+
+    public void dataAboutCar() {
+        System.out.println("Data about car: \n" +
+                "date of production = " + dateOfProduction +
+                ", \nengine type = " + engineType +
+                ", \nspeed max = " + speedMax +
+                ", \noverclocing time = " + overclocingTime +
+                ", \npassenger capacity = " + passengerCapacity +
+                ", \ncurrent number passengers = " + currentNumberPassengers +
+                ", \ncurrent speed = " + currentSpeed +
+                ", \ncurrent MAX speed = " + currentMaxSpeed() + ".");
     }
 }

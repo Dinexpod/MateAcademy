@@ -56,9 +56,9 @@ public class CarDoor {
         }
     }
 
-    public String dataOfDoor() {
-        return "Data of the door: " +
+    public void dataOfDoor() {
+        System.out.println("Data of the door: " +
                 "door state = " + doorState + ", " +
-                "window state = " + windowState + ".";
+                "window state = " + windowState + ".");
     }
 }

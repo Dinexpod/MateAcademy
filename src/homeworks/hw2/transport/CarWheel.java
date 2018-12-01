@@ -8,7 +8,7 @@ public class CarWheel {
     }
 
     public CarWheel() {
-        if(tireState == 0) {
+        if (tireState == 0) {
             tireState = 1;
         }
     }
@@ -22,7 +22,7 @@ public class CarWheel {
     }
 
     public void eraseTire(double persentOfErase) {
-        if((tireState <= 1) && (tireState >= 0)) {
+        if ((tireState <= 1) && (tireState >= 0)) {
             tireState -= ((tireState * persentOfErase) / 100);
             if (tireState <= 0) {
                 System.out.println("Tire is erased!!!");
@@ -31,8 +31,8 @@ public class CarWheel {
         }
     }
 
-    public String dataOfWheel() {
-        return "Degree of the wheel erase: " +
-                "wheel erase = " + tireState + ".";
+    public void dataOfWheel() {
+        System.out.println("Degree of the wheel erase: " +
+                "wheel erase = " + tireState + ".");
     }
 }
