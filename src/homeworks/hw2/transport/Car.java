@@ -13,8 +13,8 @@ public class Car {
     private int currentNumberPassengers = 0;
     private int currentSpeed;
 
-    List<CarWheel> carWheels = new ArrayList<>();
-    List<CarDoor> carDoors = new ArrayList<>();
+    ArrayList<CarWheel> carWheels = new ArrayList<>(4);
+    List<CarDoor> carDoors = new ArrayList<>(4);
 
     Date date = new Date();
 
@@ -85,6 +85,30 @@ public class Car {
                 }
             }
             return currentMaxSpeed;
+        }
+    }
+
+    public CarDoor getDoorByIndex(int index) {
+        if ((index > -1) && (index < carDoors.size())) {
+           return carDoors.get(index);
+        } else {
+            System.out.println("This index don't found!!!");
+            return null;
+        }
+    }
+
+    public CarWheel getWheelByIndex(int index) {
+        if ((index > -1) && (index < carWheels.size())) {
+            return carWheels.get(index);
+        } else {
+            System.out.println("This index don't found!");
+            return null;
+        }
+    }
+
+    public void takeOffAllWheel() {
+        for (CarWheel wheel : carWheels) {
+            carWheels.remove(wheel);
         }
     }
 

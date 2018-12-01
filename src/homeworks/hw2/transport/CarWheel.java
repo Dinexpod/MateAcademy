@@ -2,6 +2,7 @@ package homeworks.hw2.transport;
 
 public class CarWheel {
     private double tireState;
+    private int index = 0;
 
     public double getTireState() {
         return tireState;
