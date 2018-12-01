@@ -13,10 +13,6 @@ public class CarWheel {
         }
     }
 
-    public void setTireState(double tireState) {
-        this.tireState = tireState;
-    }
-
     public void setNewTire() {
         tireState = 1;
     }
