@@ -7,10 +7,14 @@ public class CarWheel {
         return tireState;
     }
 
-    public void ifNoTire() {
+    public CarWheel() {
         if(tireState == 0) {
             tireState = 1;
         }
+    }
+
+    public CarWheel(double tireState) {
+        this.tireState = tireState;
     }
 
     public void setNewTire() {
