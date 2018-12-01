@@ -4,7 +4,7 @@ public class CarDoor {
     private String doorState;
     private String windowState;
 
-    public void setDorAndWindowStateIfEmpty() {
+    public CarDoor() {
         if ((doorState == null) && (windowState == null)) {
             doorState = "Door closed";
             windowState = "Window closed";
@@ -19,7 +19,7 @@ public class CarDoor {
         return windowState;
     }
 
-    public void setDorAndWindowState(String doorState, String windowState) {
+    public CarDoor(String doorState, String windowState) {
         this.doorState = doorState;
         this.windowState = windowState;
     }
@@ -35,10 +35,8 @@ public class CarDoor {
     public void OpenCloseDoor() {
         if (doorState == "Door opened") {
             this.closeDoor();
-        } else if (doorState == "Door closed") {
-            this.openDoor();
         } else {
-            this.setDorAndWindowStateIfEmpty();
+            this.openDoor();
         }
     }
 
@@ -53,10 +51,8 @@ public class CarDoor {
     public void OpenCloseWindow() {
         if (doorState == "Window opened") {
             this.closeWindow();
-        } else if (doorState == "Window closed") {
-            this.openWindow();
         } else {
-            this.setDorAndWindowStateIfEmpty();
+            this.openWindow();
         }
     }
 
