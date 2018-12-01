@@ -13,7 +13,7 @@ public class Car {
     private int currentNumberPassengers = 0;
     private int currentSpeed;
 
-    ArrayList<CarWheel> carWheels = new ArrayList<>();
+    List<CarWheel> carWheels = new ArrayList<>();
     List<CarDoor> carDoors = new ArrayList<>(4);
 
     Date date = new Date();
