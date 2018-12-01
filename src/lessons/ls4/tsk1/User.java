@@ -24,7 +24,7 @@ public class User {
 
         User user = (User) o;
 
-//        if (name !)
+//         if (name !)
 
         return false;
     }
