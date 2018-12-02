@@ -1,11 +1,11 @@
 package homeworks.hw2.transport;
 
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Calendar;
 import java.util.List;
 
 public class Car {
-    private final String dateOfProduction;
+    private final long dateOfProduction;
     private String engineType;
     private double speedMax;
     private double overclocingTime;
@@ -16,13 +16,13 @@ public class Car {
     List<CarWheel> carWheels = new ArrayList<>();
     List<CarDoor> carDoors = new ArrayList<>(4);
 
-    Date date = new Date();
+    Calendar cal = Calendar.getInstance();
 
     public Car() {
-        this.dateOfProduction = date.toString();
+        this.dateOfProduction = cal.get(Calendar.YEAR);
     }
 
-    public Car(String dateOfProduction,
+    public Car(int dateOfProduction,
                String engineType,
                double speedMax,
                double overclocingTime,
