@@ -1,7 +1,6 @@
 package homeworks.hw2.transport;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 public class Car {
