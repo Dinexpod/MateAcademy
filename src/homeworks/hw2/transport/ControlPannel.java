@@ -37,6 +37,7 @@ public class ControlPannel {
         }
 
         System.out.println("\nThat to create a 'Door' push number -> 1.");
+
         tmp = Integer.parseInt(reader.readLine());
 
         if (tmp == 1) {
@@ -59,7 +60,6 @@ public class ControlPannel {
             System.out.println("\nYou choose not founded command!");
             return;
         }
-
 
 //        CarDoor carDoor1 = new CarDoor();
 //        car.carDoors.add(carDoor1);
