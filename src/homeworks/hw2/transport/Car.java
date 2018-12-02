@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Car {
     private final long dateOfProduction;
-    private String engineType;
+    private EngineType engineType;
     private double speedMax;
     private double overclocingTime;
     private int passengerCapacity;
@@ -16,14 +16,12 @@ public class Car {
     List<CarWheel> carWheels = new ArrayList<>();
     List<CarDoor> carDoors = new ArrayList<>(4);
 
-    Calendar cal = Calendar.getInstance();
-
-    public Car() {
+    public Car(Calendar cal) {
         this.dateOfProduction = cal.get(Calendar.YEAR);
     }
 
     public Car(int dateOfProduction,
-               String engineType,
+               EngineType engineType,
                double speedMax,
                double overclocingTime,
                int passengerCapacity,
@@ -38,9 +36,9 @@ public class Car {
         this.currentSpeed = currentSpeed;
     }
 
-    public void changeCurrentSpeed(int currentSpeed) {
-        if ((currentSpeed > 0) && (currentSpeed < currentMaxSpeed())) {
-            this.currentSpeed = currentSpeed;
+    public void changeCurrentSpeed(int newSpeed) {
+        if ((newSpeed > 0) && (newSpeed < getCurrentMaxSpeed())) {
+            this.currentSpeed = newSpeed;
         } else {
             System.out.println("You can't set this speed if you love your Car!!! ");
         }
@@ -72,38 +70,41 @@ public class Car {
         System.out.println("All passengers landed!");
     }
 
-    public double currentMaxSpeed() {
+    public double getCurrentMaxSpeed() {
         if (currentNumberPassengers < 0) {
             return 0;
-        } else {
-            double eraseDegree = 0;
-            double currentMaxSpeed = speedMax * eraseDegree;
-
-            for (CarWheel wheel : carWheels) {
-                if (wheel.getTireState() > eraseDegree) {
-                    eraseDegree = wheel.getTireState();
-                }
-            }
-            return currentMaxSpeed;
         }
+
+        double eraseDegree = 0;
+        double currentMaxSpeed = speedMax * eraseDegree;
+
+        for (CarWheel wheel : carWheels) {
+            if (wheel.getTireState() > eraseDegree) {
+                eraseDegree = wheel.getTireState();
+            }
+        }
+        return currentMaxSpeed;
+
     }
 
     public CarDoor getDoorByIndex(int index) {
-        if ((index > -1) && (index < carDoors.size())) {
+        if ((index >= 0) && (index < carDoors.size())) {
             return carDoors.get(index);
-        } else {
-            System.out.println("This index don't found!!!");
-            return null;
         }
+
+        System.out.println("This index don't found!!!");
+        return null;
+
     }
 
     public CarWheel getWheelByIndex(int index) {
-        if ((index > -1) && (index < carWheels.size())) {
+        if ((index >= 0) && (index < carWheels.size())) {
             return carWheels.get(index);
-        } else {
-            System.out.println("This index don't found!");
-            return null;
         }
+
+        System.out.println("This index don't found!");
+        return null;
+
     }
 
     public void takeOffAllWheel() {
@@ -128,6 +129,6 @@ public class Car {
                 ", \npassenger capacity = " + passengerCapacity +
                 ", \ncurrent number passengers = " + currentNumberPassengers +
                 ", \ncurrent speed = " + currentSpeed +
-                ", \ncurrent MAX speed = " + currentMaxSpeed() + ".");
+                ", \ncurrent MAX speed = " + getCurrentMaxSpeed() + ".");
     }
 }

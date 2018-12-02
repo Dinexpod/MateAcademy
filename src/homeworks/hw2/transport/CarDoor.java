@@ -1,39 +1,39 @@
 package homeworks.hw2.transport;
 
 public class CarDoor {
-    private String doorState;
-    private String windowState;
+    private States doorState;
+    private States windowState;
 
     public CarDoor() {
         if ((doorState == null) && (windowState == null)) {
-            doorState = "Door closed";
-            windowState = "Window closed";
+            doorState = doorState.CLOSED;
+            windowState = windowState.CLOSED;
         }
     }
 
-    public String getDoorState() {
+    public States getDoorState() {
         return doorState;
     }
 
-    public String getWindowState() {
+    public States getWindowState() {
         return windowState;
     }
 
-    public CarDoor(String doorState, String windowState) {
+    public CarDoor(States doorState, States windowState) {
         this.doorState = doorState;
         this.windowState = windowState;
     }
 
     public void openDoor() {
-        doorState = "Door opened";
+        doorState = doorState.OPEN;
     }
 
     public void closeDoor() {
-        doorState = "Door closed";
+            doorState = doorState.CLOSED;
     }
 
     public void OpenCloseDoor() {
-        if (doorState == "Door opened") {
+        if (doorState == doorState.OPEN) {
             this.closeDoor();
         } else {
             this.openDoor();
@@ -41,15 +41,15 @@ public class CarDoor {
     }
 
     public void openWindow() {
-        doorState = "Window opened";
+        doorState = windowState.OPEN;
     }
 
     public void closeWindow() {
-        doorState = "Window closed";
+        doorState = windowState.CLOSED;
     }
 
     public void OpenCloseWindow() {
-        if (doorState == "Window opened") {
+        if (doorState == windowState.OPEN) {
             this.closeWindow();
         } else {
             this.openWindow();
