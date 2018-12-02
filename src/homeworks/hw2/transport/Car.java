@@ -16,8 +16,8 @@ public class Car {
     List<CarWheel> carWheels = new ArrayList<>();
     List<CarDoor> carDoors = new ArrayList<>(4);
 
-    public Car(Calendar cal) {
-        this.dateOfProduction = cal.get(Calendar.YEAR);
+    public Car(int dateOfProduction) {
+        this.dateOfProduction = dateOfProduction;
     }
 
     public Car(int dateOfProduction,
@@ -84,7 +84,6 @@ public class Car {
             }
         }
         return currentMaxSpeed;
-
     }
 
     public CarDoor getDoorByIndex(int index) {
@@ -94,7 +93,6 @@ public class Car {
 
         System.out.println("This index don't found!!!");
         return null;
-
     }
 
     public CarWheel getWheelByIndex(int index) {
@@ -117,7 +115,6 @@ public class Car {
             carWheels.add(new CarWheel());
         }
     }
-
 
     public void dataAboutCar() {
         System.out.println("Data about car: \n" +
