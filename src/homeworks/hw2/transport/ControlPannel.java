@@ -58,11 +58,5 @@ public class ControlPannel {
             System.out.println("\nYou choose not founded command!");
             return;
         }
-
-//        CarDoor carDoor1 = new CarDoor();
-//        car.carDoors.add(carDoor1);
-//        CarDoor carDoor = car.getDoorByIndex(0);
-//        System.out.println(carDoor);
-//        carDoor.getDoorState();
     }
 }
