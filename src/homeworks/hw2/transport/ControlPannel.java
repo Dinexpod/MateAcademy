@@ -7,24 +7,24 @@ import java.util.Calendar;
 
 public class ControlPannel {
     public static void main(String[] args) throws IOException {
-        System.out.println("Hello!!! Welcome to my program 'Car'!!! \nLets try create and use our Car! ");
+        System.out.println("\nHello!!! Welcome to my program 'Car'!!! \nLets try create and use our Car! ");
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        System.out.println("That to create a 'Car' push number -> 1.");
+        System.out.println("\nThat to create a 'Car' push number -> 1.");
         Integer tmp = Integer.parseInt(reader.readLine());
 
         if (tmp == 1) {
-            System.out.println("OK!");
+            System.out.println("\nOK!");
         } else {
-            System.out.println("You choose not founded command!");
+            System.out.println("\nYou choose not founded command!");
             return;
         }
 
         Calendar cal = Calendar.getInstance();
         Car car = new Car(cal);
 
-        System.out.println("Cool! You created car, but it not working yet. \n" +
+        System.out.println("\nCool! You created car, but it not working yet. \n" +
                 "That to see state of car push number -> 1");
 
         tmp = Integer.parseInt(reader.readLine());
@@ -32,10 +32,33 @@ public class ControlPannel {
         if (tmp == 1) {
             car.dataAboutCar();
         } else {
-            System.out.println("You choose not founded command!");
+            System.out.println("\nYou choose not founded command!");
             return;
         }
 
+        System.out.println("\nThat to create a 'Door' push number -> 1.");
+        tmp = Integer.parseInt(reader.readLine());
+
+        if (tmp == 1) {
+            System.out.println("\nOK!");
+        } else {
+            System.out.println("\nYou choose not founded command!");
+            return;
+        }
+
+        CarDoor carDoor = new CarDoor();
+
+        System.out.println("\nCool! You created door, but it not working yet. \n" +
+                "That to see state of car push number -> 1");
+
+        tmp = Integer.parseInt(reader.readLine());
+
+        if (tmp == 1) {
+            carDoor.dataOfDoor();
+        } else {
+            System.out.println("\nYou choose not founded command!");
+            return;
+        }
 
 
 //        CarDoor carDoor1 = new CarDoor();
