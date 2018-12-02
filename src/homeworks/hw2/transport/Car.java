@@ -5,7 +5,7 @@ import java.util.Calendar;
 import java.util.List;
 
 public class Car {
-    private final long dateOfProduction;
+    private final int dateOfProduction;
     private EngineType engineType;
     private double speedMax;
     private double overclocingTime;
