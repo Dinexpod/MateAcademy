@@ -23,7 +23,7 @@ public class CarWheel {
     }
 
     public void eraseTire(double persentOfErase) {
-        if ((tireState <= 1) && (tireState >= 0)) {
+        if ((tireState >= 0) && (tireState <= 1)) {
             tireState -= ((tireState * persentOfErase) / 100);
             if (tireState <= 0) {
                 System.out.println("Tire is erased!!!");
