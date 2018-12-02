@@ -21,8 +21,7 @@ public class ControlPannel {
             return;
         }
 
-        Calendar cal = Calendar.getInstance();
-        Car car = new Car(cal);
+        Car car = new Car(2018);
 
         System.out.println("\nCool! You created car, but it not working yet. \n" +
                 "That to see state of car push number -> 1");
