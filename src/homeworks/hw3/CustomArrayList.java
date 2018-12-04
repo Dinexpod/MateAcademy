@@ -10,7 +10,7 @@ public class CustomArrayList<T> {
 
     public CustomArrayList(int capacity) {
         if(capacity < 0) {
-            throw new IllegalArgumentException("Cannot construct CustomArrayList with negative capacity!!");
+            throw new IllegalArgumentException("Cannot construct CustomArrayList with negative capacity!");
         }
 
         data = new Object[capacity];
