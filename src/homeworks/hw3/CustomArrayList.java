@@ -1,7 +1,5 @@
 package homeworks.hw3;
 
-import java.util.List;
-
 public class CustomArrayList<T> {
     private Object[] data;
     private int size;
