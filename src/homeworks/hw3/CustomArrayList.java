@@ -82,7 +82,7 @@ public class CustomArrayList<T> implements List<T> {
 
     public boolean contains(Object value) {
         for (int i = 0; i < size; i++) {
-            if ((value == null) ? (data[i].equals(value)) : (data[i] == value)) {
+            if ((value != null) ? (data[i].equals(value)) : (data[i] == value)) {
                 return true;
             }
         }
