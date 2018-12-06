@@ -93,7 +93,7 @@ public class CustomArrayList<T> implements List<T> {
 
     public T get(int index) {
         if ((index < 0) && (index >= size)) {
-            throw new IllegalArgumentException("Cannot construct CustomArrayList with negative size!");
+           callException(index);
         }
 
         return (T) data[index];
@@ -101,7 +101,7 @@ public class CustomArrayList<T> implements List<T> {
 
     public T remove(int index) {
         if (index < 0 && index >= size) {
-            throw new IllegalArgumentException("Cannot construct CustomArrayList with negative size!");
+            callException(index);
         }
 
         Object tmp = data[index];
@@ -120,6 +120,12 @@ public class CustomArrayList<T> implements List<T> {
             data[i] = null;
             size--;
         }
+    }
+
+    private void callException(int index) {
+        throw new IllegalArgumentException("Cannot construct CustomArrayList with wrong parameter!" +
+                "\nindex must be biggest than 0 and less than size" +
+                "\nsize: " + size + ", index: " + index + ".");
     }
 
     @Override
