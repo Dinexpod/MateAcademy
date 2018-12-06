@@ -39,7 +39,7 @@ public class Main {
         System.out.println("size " + customArrayList.size());
         System.out.println("CONTAINS  " + customArrayList.contains(47));
         System.out.println("size " + customArrayList.size());
-        System.out.println(customArrayList.contains(48));
+        System.out.println("CONTAINS -- " + customArrayList.contains(48));
         System.out.println("size " + customArrayList.size());
 
         customArrayList.remove(5);
