@@ -16,7 +16,7 @@ public class Main {
         customArrayList.add(5);
         customArrayList.add(6);
         customArrayList.add(7);
-        customArrayList.add(8);
+        customArrayList.add(null);
 
         System.out.println(customArrayList.toString());
         System.out.println(customArrayList.get(2));
@@ -33,7 +33,7 @@ public class Main {
         System.out.println(customArrayList.toString());
         System.out.println(customArrayList.isEmpty());
         System.out.println(customArrayList.toString());
-        System.out.println("CONTAINS  " + customArrayList.contains(47));
+        System.out.println("CONTAINS  " + customArrayList.contains(null));
         System.out.println(customArrayList.toString());
         System.out.println("CONTAINS -- " + customArrayList.contains(48));
         System.out.println(customArrayList.toString());
