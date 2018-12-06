@@ -32,8 +32,8 @@ public class CustomArrayList<T> implements List<T> {
     }
 
     public void add(int index, T value) {
-        if (index < 0 && index >= size) {
-            throw new IllegalArgumentException("Cannot construct CustomArrayList with negative size!");
+        if (index < 0 || index >= size) {
+            callException(index);
         }
 
         ensureCapacity(size + 1);
@@ -91,7 +91,7 @@ public class CustomArrayList<T> implements List<T> {
     }
 
     public T get(int index) {
-        if ((index < 0) && (index >= size)) {
+        if ((index < 0) || (index >= size)) {
             callException(index);
         }
 
