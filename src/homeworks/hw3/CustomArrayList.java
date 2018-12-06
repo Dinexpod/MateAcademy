@@ -1,9 +1,6 @@
 package homeworks.hw3;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
 
 /**
  * My method customArrayList that overrides some functions in ArrayList
@@ -41,17 +38,19 @@ public class CustomArrayList<T> implements List<T> {
 
         ensureCapacity(size + 1);
 
-        Object[] tmpArray = new Object[size - index];
+        int replace = (size - index);
+        Object[] tmpArray = new Object[replace];
+        int index1 = index;
 
-        for (int i = 0; i < tmpArray.length; i++) {
-            tmpArray[i] = data[index];
+        for (int i = 0; i < replace; i++) {
+            tmpArray[i] = data[index1++];
         }
 
         data[index] = value;
-        int tmpIndex = index;
+        int tmpIndex = index + 1;
 
-        for (int i = 0; i < tmpArray.length; i++) {
-            data[++tmpIndex] = tmpArray[i];
+        for (int i = 0; i < replace; i++) {
+            data[tmpIndex++] = tmpArray[i];
         }
 
         size++;
@@ -93,7 +92,7 @@ public class CustomArrayList<T> implements List<T> {
 
     public T get(int index) {
         if ((index < 0) && (index >= size)) {
-           callException(index);
+            callException(index);
         }
 
         return (T) data[index];
@@ -116,16 +115,25 @@ public class CustomArrayList<T> implements List<T> {
     }
 
     public void clear() {
-        for (int i = size; i > 0; i--) {
+        for (int i = size; i >= 0; i--) {
             data[i] = null;
             size--;
         }
+        size = 0;
     }
 
     private void callException(int index) {
         throw new IllegalArgumentException("Cannot construct CustomArrayList with wrong parameter!" +
                 "\nindex must be biggest than 0 and less than size" +
                 "\nsize: " + size + ", index: " + index + ".");
+    }
+
+    @Override
+    public String toString() {
+        return "CustomArrayList{" +
+                "data=" + Arrays.toString(data) +
+                ", size=" + size +
+                '}';
     }
 
     @Override
