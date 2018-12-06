@@ -31,8 +31,6 @@ public class Main {
         System.out.println(customArrayList.toString());
         System.out.println(customArrayList.get(10));
         System.out.println(customArrayList.toString());
-        System.out.println(customArrayList.get(11));
-        System.out.println(customArrayList.toString());
         System.out.println(customArrayList.isEmpty());
         System.out.println(customArrayList.toString());
         System.out.println("CONTAINS  " + customArrayList.contains(47));
@@ -51,6 +49,5 @@ public class Main {
         System.out.println(customArrayList.toString());
         System.out.println(customArrayList.isEmpty());
         System.out.println(customArrayList.toString());
-        System.out.println(customArrayList.get(0));
     }
 }
