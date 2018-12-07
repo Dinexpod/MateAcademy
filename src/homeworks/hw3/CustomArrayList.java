@@ -1,6 +1,10 @@
 package homeworks.hw3;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
 /**
  * My method customArrayList that overrides some functions in ArrayList
@@ -32,7 +36,7 @@ public class CustomArrayList<T> implements List<T> {
     }
 
     public void add(int index, T value) {
-        if (index < 0 || index >= size) {
+        if (checkIndex(index)) {
             callException(index);
         }
 
@@ -101,7 +105,7 @@ public class CustomArrayList<T> implements List<T> {
     }
 
     public T get(int index) {
-        if ((index < 0) || (index >= size)) {
+        if (checkIndex(index)) {
             callException(index);
         }
 
@@ -109,7 +113,7 @@ public class CustomArrayList<T> implements List<T> {
     }
 
     public T remove(int index) {
-        if (index < 0 && index >= size) {
+        if (checkIndex(index)) {
             callException(index);
         }
 
@@ -144,6 +148,10 @@ public class CustomArrayList<T> implements List<T> {
                 "data=" + Arrays.toString(data) +
                 ", size=" + size +
                 '}';
+    }
+
+    private boolean checkIndex(int index) {
+        return ((index < 0) || (index > size));
     }
 
     @Override
