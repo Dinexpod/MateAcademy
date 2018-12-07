@@ -16,7 +16,8 @@ public class Main {
 
         customArrayList.add(4, 48);
 
-        System.out.println(customArrayList.isEmpty());
+        System.out.println(customArrayList.toString());
+        System.out.println("Is EMPTY " + customArrayList.isEmpty());
         System.out.println(customArrayList.toString());
         System.out.println("CONTAINS  " + customArrayList.contains(null));
         System.out.println(customArrayList.toString());
