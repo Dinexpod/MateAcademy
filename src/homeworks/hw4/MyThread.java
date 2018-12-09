@@ -1,4 +1,4 @@
-package lessons.ls7.tsk3;
+package homeworks.hw4;
 
 public class MyThread extends Thread {
     long sleepMillis;
@@ -12,13 +12,13 @@ public class MyThread extends Thread {
 
     @Override
     public void run() {
-        System.out.println(name + " thread run started");
+        System.out.println(name + " started");
         try {
             Thread.sleep(sleepMillis);
         } catch (InterruptedException e) {
-            System.out.println("InterruptedException eass occurred in " + name);
+            System.out.println("InterruptedException occurred in " + name);
         }
 
-        System.out.println(name + " thread finished");
+        System.out.println(name + " finished");
     }
 }
