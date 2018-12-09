@@ -8,7 +8,7 @@ public class Main2 {
         thread.start();
 
         try {
-            thread.join(500);
+            thread.join(1000);
             System.out.println("thread join exist");
         } catch (InterruptedException e) {
             e.printStackTrace();
