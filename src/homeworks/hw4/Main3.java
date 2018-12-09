@@ -5,6 +5,9 @@ public class Main3 {
         MyThread thread = new MyThread(5000, "Thread");
         MyThread thread1 = new MyThread(3000, "Thread1");
 
+        thread.setDaemon(true);
+        thread1.setDaemon(true);
+
         thread.start();
 
         try {
@@ -15,9 +18,6 @@ public class Main3 {
         }
 
         thread1.start();
-
-        thread.setDaemon(true);
-        thread1.setDaemon(true);
 
         System.out.println("Main method finished!!");
     }
